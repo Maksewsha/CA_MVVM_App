@@ -6,14 +6,22 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.maksewsha.camvvm_app.R
+import com.maksewsha.camvvm_app.data.repository.UserRepositoryImpl
 import com.maksewsha.camvvm_app.domain.models.SaveUserName
 import com.maksewsha.camvvm_app.domain.usecase.GetUserNameUseCase
 import com.maksewsha.camvvm_app.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
 
-    private val getUserNameUseCase = GetUserNameUseCase()
-    private val saveUserNameUseCase = SaveUserNameUseCase()
+    private val userRepository by lazy(LazyThreadSafetyMode.NONE) {
+        UserRepositoryImpl(applicationContext)
+    }
+    private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {
+        GetUserNameUseCase(userRepository)
+    }
+    private val saveUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {
+        SaveUserNameUseCase(userRepository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
