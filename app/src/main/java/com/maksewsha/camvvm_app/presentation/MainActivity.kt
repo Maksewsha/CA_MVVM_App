@@ -1,10 +1,11 @@
-package com.maksewsha.camvvm_app
+package com.maksewsha.camvvm_app.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.maksewsha.camvvm_app.R
 import com.maksewsha.camvvm_app.domain.models.SaveUserName
 import com.maksewsha.camvvm_app.domain.usecase.GetUserNameUseCase
 import com.maksewsha.camvvm_app.domain.usecase.SaveUserNameUseCase
