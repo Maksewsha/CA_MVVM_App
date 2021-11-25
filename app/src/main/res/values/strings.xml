@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CA&amp;MVVM_App</string>
+    <string name="nodata">No Data</string>
+    <string name="get_data">Get data</string>
+    <string name="enter_your_data_here">Enter your data here</string>
+    <string name="save_data">Save data</string>
+</resources>
